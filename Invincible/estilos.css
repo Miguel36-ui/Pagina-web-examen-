@@ -1,0 +1,161 @@
+/* Estilo general */
+body {
+  font-family: Arial, sans-serif;
+  background: url('https://images2.alphacoders.com/133/1337352.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  padding-top: 70px;
+}
+
+
+/* Navbar */
+.navbar-brand {
+  font-family: 'Bangers', sans-serif;
+  font-size: 1.8rem;
+}
+
+.navbar {
+  border-bottom: 2px solid #ffc107;
+}
+
+/* Buscador */
+form.d-flex {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+input.form-control {
+  border-radius: 15px;
+}
+
+button.btn-warning {
+  border-radius: 15px;
+}
+
+
+/* Títulos de las secciones */
+h1 {
+  font-family: 'Bangers', sans-serif;
+  font-size: 3rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+/* Tarjetas */
+.card {
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-radius: 15px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.card img {
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0;
+}
+
+.card-body {
+  text-align: center;
+}
+
+.card-title {
+  font-family: 'Bangers', sans-serif;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* Ajustes para las tarjetas */
+.card {
+  margin-top: 20px; /* Agregar más espacio entre tarjetas */
+  height: 100%; /* Asegurarse de que todas las tarjetas tengan la misma altura */
+}
+
+/* Ajuste del margen superior de las secciones */
+#heroes, #villanos, #viltrumitas, #arcos {
+  margin-top: 30px; /* Espacio adicional entre las secciones */
+}
+
+/* Espaciado adicional entre las filas de las tarjetas */
+.row-cols-md-2 .col {
+  margin-top: 10px;
+}
+
+/* Agregar en tu archivo de estilos (estilos.css) */
+.card {
+  margin: 0 auto; /* Centrar las tarjetas */
+  max-width: 90%;  /* Limitar el ancho para que no se estire hasta el borde */
+}
+.row {
+  justify-content: center; /* Centrar las columnas dentro de la fila */
+}
+
+
+/* Botones de "Ver más" */
+details summary {
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+details[open] summary {
+  background-color: #ffc107;
+  color: #333;
+}
+
+details p {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+/* Listas de arcos argumentales */
+.list-group-item {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #ffc107;
+  font-size: 1rem;
+  border: 1px solid #ffc107;
+  border-radius: 5px;
+}
+
+.list-group-item:hover {
+  background-color: #ffc107;
+  color: #333;
+}
+
+/* Formulario de contacto */
+form {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+  border-radius: 15px;
+}
+
+form label {
+  font-weight: bold;
+}
+
+form .btn {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+
+/* Footer */
+footer {
+  background: rgba(0, 0, 0, 0.8);
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 15px;
+  border-top: 2px solid #ffc107;
+}
