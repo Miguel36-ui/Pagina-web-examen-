@@ -11,43 +11,67 @@
 </head>
 
 <body>
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <!-- Logo centrado y movido ligeramente a la derecha -->
-    <a class="navbar-brand" href="#" style="margin-left: 50px;">
-      <img src="https://image.tmdb.org/t/p/original/8MD7BNgU0X21GewTZk8zVd9Awi9.png" 
-           alt="Invincible Logo" 
-           style="height: 50px;">
-    </a>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <!-- Logo centrado y movido ligeramente a la derecha -->
+      <a class="navbar-brand" href="#" style="margin-left: 50px;">
+        <img src="https://image.tmdb.org/t/p/original/8MD7BNgU0X21GewTZk8zVd9Awi9.png" alt="Invincible Logo"
+          style="height: 50px;">
+      </a>
 
-    <!-- Botón de menú colapsable (en móviles) -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <!-- Botón de menú colapsable (en móviles) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <!-- Navegación -->
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav mx-auto">
-        <li class="nav-item"><a class="nav-link" href="#heroes">Héroes</a></li>
-        <li class="nav-item"><a class="nav-link" href="#villanos">Villanos</a></li>
-        <li class="nav-item"><a class="nav-link" href="#viltrumitas">Viltrumitas</a></li>
-        <li class="nav-item"><a class="nav-link" href="#arcos">Arcos Argumentales</a></li>
-      </ul>
+      <!-- Navegación -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="#heroes">Héroes destacados</a></li>
+          <li class="nav-item"><a class="nav-link" href="#villanos">Villanos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#viltrumitas">Viltrumitas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#arcos">Arcos Argumentales</a></li>
+        </ul>
 
-      <!-- Buscador -->
-      <form class="d-flex ms-auto" style="max-width: 300px;">
-        <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search">
-        <button class="btn btn-warning" type="submit">Buscar</button>
-      </form>
+
+        <!-- Buscador -->
+        <form class="d-flex ms-auto" style="max-width: 300px;">
+          <input id="searchInput" class="form-control me-2" type="search"
+            placeholder="Buscar personaje, villano o arco..." aria-label="Search" autocomplete="off">
+          <button class="btn btn-warning" type="submit">Buscar</button>
+        </form>
+
+
+        <!-- Contenedor para las sugerencias de autocompletado -->
+        <div id="autocomplete-list" class="autocomplete-items"></div>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
+
+  <!-- Resumen debajo del encabezado -->
+  <section id="resumen" class="py-5" style="background-color: #343a40; color: #f8f9fa;">
+    <div class="container text-center">
+      <h2 class="mb-3" style="font-family: 'Bangers', sans-serif; font-size: 2.5rem;">Bienvenido al Universo de
+        Invincible</h2>
+      <p class="lead" style="font-size: 1.2rem;">
+        Explora el emocionante mundo de <strong>Invincible</strong>, un universo lleno de héroes, villanos y conflictos
+        épicos.
+        Descubre la historia de Mark Grayson, su batalla por proteger la Tierra, y los desafíos que enfrentan héroes y
+        viltrumitas en una lucha por el destino del universo.
+      </p>
+      <p style="font-size: 1rem;">
+        Desde los héroes más poderosos hasta los villanos más despiadados, y los arcos argumentales más emocionantes,
+        todo está aquí para que lo explores. ¡Adéntrate en esta aventura!
+      </p>
+    </div>
+  </section>
 
   <!-- Héroes -->
   <section id="heroes" class="my-5">
-    <h1 class="text-center mb-4">Héroes Principales</h1>
+    <h1 class="text-center mb-4">Héroes destacados</h1>
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
       <!-- Tarjetas de héroes -->
       <div class="col">
@@ -60,6 +84,8 @@
               <summary class="btn btn-warning btn-sm">Ver más</summary>
               <p class="card-text mt-2">Mark Grayson, alias Invincible, es un joven superhéroe que hereda poderes de su
                 padre Viltrumita. Protege la Tierra mientras enfrenta conflictos cósmicos y personales.</p>
+
+                <span class="badge hero">Héroe</span>
             </details>
           </div>
         </div>
@@ -185,7 +211,7 @@
                 src="https://spcdn.shortpixel.ai/spio/ret_img,q_orig,to_auto,s_webp:avif/www.cinemascomics.com/wp-content/uploads/2025/02/Oliver-Grayson-Invincible.jpg"
                 class="card-img-top rounded-top" alt="Rex Splode">
               <div class="card-body">
-                <h5 class="card-title">Oliver Grayson</h5>
+                <h5 class="card-title">Oliver</h5>
                 <details>
                   <summary class="btn btn-warning btn-sm">Ver más</summary>
                   <p class="card-text mt-2">Oliver es el hermano menor de Mark Grayson. A pesar de ser muy joven, posee
@@ -203,13 +229,16 @@
           <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
             <div class="col">
               <div class="card bg-light border-danger rounded shadow" id="Techjacket">
-                <img src="https://www.writeups.org/wp-content/uploads/Tech-Jacket-Kirkman-Invincible-Image-Comics-h1.jpg"
+                <img
+                  src="https://www.writeups.org/wp-content/uploads/Tech-Jacket-Kirkman-Invincible-Image-Comics-h1.jpg"
                   class="card-img-top rounded-top" alt="Invincible">
                 <div class="card-body">
                   <h5 class="card-title">Techjacket</h5>
                   <details>
                     <summary class="btn btn-warning btn-sm">Ver más</summary>
-                    <p class="card-text mt-2">Techjack es una figura crucial en la guerra contra los Viltrumitas, con su intelecto y habilidad para la ingeniería tecnológica que permite a la resistencia tener una oportunidad contra una raza tan poderosa. </p>
+                    <p class="card-text mt-2">Techjack es una figura crucial en la guerra contra los Viltrumitas, con su
+                      intelecto y habilidad para la ingeniería tecnológica que permite a la resistencia tener una
+                      oportunidad contra una raza tan poderosa. </p>
                   </details>
                 </div>
               </div>
@@ -446,11 +475,11 @@
     <div class="row mt-5">
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
         <div class="col">
-          <div class="card bg-light border-danger rounded shadow" id="Thaedus">
+          <div class="card bg-light border-danger rounded shadow" id="Thaedeus">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc8kNvaE5rfc0E0FaSFHEtdL9E8Rn555wiCA&s"
               class="card-img-top rounded-top" alt="Invincible">
             <div class="card-body">
-              <h5 class="card-title">Thadeus </h5>
+              <h5 class="card-title">Thaedeus </h5>
               <details>
                 <summary class="btn btn-warning btn-sm">Ver más</summary>
                 <p class="card-text mt-2">Fue un miembro clave de la resistencia contra el Imperio Viltrumita y uno de
@@ -576,9 +605,95 @@
         alert('No se encontró ningún resultado para tu búsqueda.'); // Mostrar alerta si no hay coincidencias
       }
     });
+
+    window.onscroll = function () {
+      const scrollTopButton = document.getElementById("scrollTopButton");
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        scrollTopButton.style.display = "flex";
+      } else {
+        scrollTopButton.style.display = "none";
+      }
+    };
+
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+
+    // Función para manejar la búsqueda
+    function buscarPersonaje() {
+      const query = document.querySelector("input[type='search']").value.toLowerCase();
+      const cards = document.querySelectorAll(".card");
+
+      // Primero elimina cualquier resalte previo
+      cards.forEach(card => card.classList.remove("highlight-card"));
+
+      // Buscamos el personaje por nombre (asegurándonos de que esté en minúsculas)
+      cards.forEach(card => {
+        const title = card.querySelector(".card-title").innerText.toLowerCase();
+        if (title.includes(query)) {
+          // Resalta la tarjeta encontrada
+          card.classList.add("highlight-card");
+
+          // Desplazamos la tarjeta encontrada a la vista
+          card.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      });
+    }
+
+    // Detecta cuando el usuario presiona enter o hace clic en el botón de búsqueda
+    document.querySelector("form").addEventListener("submit", function (event) {
+      event.preventDefault();
+      buscarPersonaje();
+    });
+
   </script>
 
+  <script>
+    // Lista de personajes, villanos y arcos
+    const heroesVillanosArcos = [
+      "Invincible", "Atom Eve", "Rex Splode", "Dupli-Kate", "Monster Girl", "Inmortal", "Samson", "Allen", "Oliver", "Techjacket", "Thragg", "Conquest", "Angstrom Levy", "The Mauler Twins",
+      "Robot", "Dinosaurus", "The Lizard League", "Omni-Man", "Ursaal", "Anissa", "Lucan", "Kregg", "Argall", "Thaedeus"
+    ];
+
+    // Evento de entrada en la barra de búsqueda
+    document.getElementById("searchInput").addEventListener("input", function () {
+      const input = this.value.toLowerCase();
+      const autocompleteList = document.getElementById("autocomplete-list");
+
+      // Limpiar la lista de sugerencias anteriores
+      autocompleteList.innerHTML = "";
+
+      if (!input) {
+        return false; // Si no hay texto, no mostrar sugerencias
+      }
+
+      // Filtrar las opciones que comienzan con la letra escrita por el usuario
+      const suggestions = heroesVillanosArcos.filter(item => item.toLowerCase().startsWith(input));
+
+      // Mostrar las sugerencias filtradas
+      suggestions.forEach(item => {
+        const div = document.createElement("div");
+        div.textContent = item;
+        div.addEventListener("click", function () {
+          // Al hacer clic en una sugerencia, llenar el campo de búsqueda con el valor seleccionado
+          document.getElementById("searchInput").value = item;
+          autocompleteList.innerHTML = ""; // Limpiar las sugerencias
+        });
+        autocompleteList.appendChild(div);
+      });
+    });
+  </script>
+
+
+
+  <button id="scrollTopButton" class="scroll-to-top" onclick="scrollToTop()">↑</button>
+
+
 </body>
+
 
 </html>
 </body>
