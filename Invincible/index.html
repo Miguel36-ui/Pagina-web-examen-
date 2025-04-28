@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invincible Universe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+ 
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <!-- Logo centrado y movido ligeramente a la derecha -->
+      <a class="navbar-brand" href="#" style="margin-left: 50px;">
+        <img src="https://image.tmdb.org/t/p/original/8MD7BNgU0X21GewTZk8zVd9Awi9.png" alt="Invincible Logo"
+          style="height: 50px;">
+      </a>
+      <header>
+        <img
+          src="https://preview.redd.it/1mhcf65kin271.png?width=640&crop=smart&auto=webp&s=0fab30084927c47dc085c782b873347fe31feb9f"
+          alt="Invincible volando" class="fly-image">
+      </header>
+
+
+      <!-- Botón de menú colapsable (en móviles) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navegación -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="#heroes">Héroes destacados</a></li>
+          <li class="nav-item"><a class="nav-link" href="#villanos">Villanos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#viltrumitas">Viltrumitas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#arcos">Arcos Argumentales</a></li>
+        </ul>
+
+
+        <!-- Buscador -->
+        <form class="d-flex ms-auto" style="max-width: 300px;">
+          <input id="searchInput" class="form-control me-2" type="search"
+            placeholder="Buscar personaje, villano o arco..." aria-label="Search" autocomplete="off">
+          <button class="btn btn-warning" type="submit">Buscar</button>
+        </form>
+
+
+        <!-- Contenedor para las sugerencias de autocompletado -->
+        <div id="autocomplete-list" class="autocomplete-items"></div>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Resumen debajo del encabezado -->
+  <section id="resumen" class="py-5" style="background-color: #343a40; color: #f8f9fa;">
+    <div class="container text-center">
+      <h2 class="mb-3" style="font-family: 'Bangers', sans-serif; font-size: 2.5rem;">Bienvenido al Universo de
+        Invincible</h2>
+      <p class="lead" style="font-size: 1.2rem;">
+        Explora el emocionante mundo de <strong>Invincible</strong>, un universo lleno de héroes, villanos y conflictos
+        épicos.
+        Descubre la historia de Mark Grayson, su batalla por proteger la Tierra, y los desafíos que enfrentan héroes y
+        viltrumitas en una lucha por el destino del universo.
+      </p>
+      <p style="font-size: 1rem;">
+        Desde los héroes más poderosos hasta los villanos más despiadados, y los arcos argumentales más emocionantes,
+        todo está aquí para que lo explores. ¡Adéntrate en esta aventura!
+      </p>
+    </div>
+  </section>
+
+  <!-- Héroes -->
+  <section id="heroes" class="my-5">
+    <h1 class="text-center mb-4">Héroes destacados</h1>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+      <!-- Tarjetas de héroes -->
+      <div class="col">
+        <div class="card bg-light border-warning rounded shadow" id="invincible">
+          <img src="https://media.vandalsports.com/i/640x360/2-2025/2025214103613_1.jpg"
+            class="card-img-top rounded-top" alt="Invincible">
+          <div class="card-body">
+            <h5 class="card-title">Invincible</h5>
+            <details>
+              <summary class="btn btn-warning btn-sm">Ver más</summary>
+              <p class="card-text mt-2">Mark Grayson, alias Invincible, es un joven superhéroe que hereda poderes de su
+                padre Viltrumita. Protege la Tierra mientras enfrenta conflictos cósmicos y personales.</p>
+
+              <span class="badge hero">Héroe</span>
+              <span class="badge viltrumita">Viltrumita</span>
+            </details>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card bg-light border-warning rounded shadow" id="Atom Eve">
+          <img src="https://www.thecoffeetoons.com/wp-content/uploads/Atom-Eve-de-Invincible.jpg"
+            class="card-img-top rounded-top" alt="Atom Eve">
+          <div class="card-body">
+            <h5 class="card-title">Atom Eve</h5>
+            <details>
+              <summary class="btn btn-warning btn-sm">Ver más</summary>
+              <p class="card-text mt-2">Manipula la materia y es una aliada crucial para Invincible. Valiente y
+                poderosa, lucha por un mundo mejor.</p>
+              <span class="badge hero">Héroe</span>
+            </details>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card bg-light border-warning rounded shadow" id="Rex Splode">
+          <img
+            src="https://www.superherohype.com/wp-content/uploads/sites/4/2025/03/Rex-Splode-Invincible-XP.jpg?w=1024"
+            class="card-img-top rounded-top" alt="Rex Splode">
+          <div class="card-body">
+            <h5 class="card-title">Rex Splode</h5>
+            <details>
+              <summary class="btn btn-warning btn-sm">Ver más</summary>
+              <p class="card-text mt-2">Un héroe con la capacidad de cargar objetos con energía explosiva. Es
+                carismático y letal en combate.</p>
+              <span class="badge hero">Héroe</span>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <div class="col">
+          <div class="card bg-light border-warning rounded shadow" id="Dupli-Kate">
+            <img src="https://i.ytimg.com/vi/2bGP3V4iV18/hqdefault.jpg" class="card-img-top rounded-top"
+              alt="Invincible">
+            <div class="card-body">
+              <h5 class="card-title">Dupli-Kate</h5>
+              <details>
+                <summary class="btn btn-warning btn-sm">Ver más</summary>
+                <p class="card-text mt-2">Dupli-Kate es otra heroína que forma parte de los Guardians of the Globe.
+                  Tiene la habilidad de crear duplicados de sí misma, lo que le permite atacar a sus enemigos desde
+                  varios frentes. Su capacidad para multiplicarse es muy útil en combates.</p>
+                <span class="badge hero">Héroe</span>
+              </details>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card bg-light border-warning rounded shadow" id="Monster Girl">
+            <img src="https://i.ytimg.com/vi/kj1aM6650RA/maxresdefault.jpg" class="card-img-top rounded-top"
+              alt="Atom Eve">
+            <div class="card-body">
+              <h5 class="card-title">Monster Girl</h5>
+              <details>
+                <summary class="btn btn-warning btn-sm">Ver más</summary>
+                <p class="card-text mt-2">Monster Girl tiene la habilidad de convertirse en una criatura monstruosa con
+                  fuerza sobrehumana. Sin embargo, hay una desventaja: cada vez que usa sus poderes, su forma humana
+                  envejece. Esto le genera una constante lucha con su identidad y sus decisiones.</p>
+                <span class="badge hero">Héroe</span>
+              </details>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card bg-light border-warning rounded shadow" id="Inmortal">
+            <img
+              src="https://preview.redd.it/the-immortal-v0-kpd5tlaqvuyb1.jpg?width=640&crop=smart&auto=webp&s=a78d968996797a5ff8ab228633a24e6e7346f968"
+              class="card-img-top rounded-top" alt="Rex Splode">
+            <div class="card-body">
+              <h5 class="card-title">Inmortal</h5>
+              <details>
+                <summary class="btn btn-warning btn-sm">Ver más</summary>
+                <p class="card-text mt-2">El Immortal es uno de los héroes más poderosos de la Tierra. Tiene una
+                  longevidad impresionante, habiendo vivido durante siglos, y es prácticamente indestructible. Sin
+                  embargo, su vida está marcada por constantes resurrecciones debido a sus enfrentamientos con villanos
+                  poderosos.</p>
+                <span class="badge hero">Héroe</span>
+              </details>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-5">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+          <div class="col">
+            <div class="card bg-light border-warning rounded shadow" id="Samson">
+              <img src="https://pbs.twimg.com/media/GjKJ0PZWoAAiEHt.jpg:large" class="card-img-top rounded-top"
+                alt="Invincible">
+              <div class="card-body">
+                <h5 class="card-title">Samson</h5>
+                <details>
+                  <summary class="btn btn-warning btn-sm">Ver más</summary>
+                  <p class="card-text mt-2">Black Samson es un superhéroe que pertenece a los Guardians of the Globe.
+                    Aunque no tiene habilidades tan impresionantes como algunos de sus compañeros, su habilidad para
+                    resistir daños y su valor lo convierten en un miembro esencial del equipo.</p>
+                  <span class="badge hero">Héroe</span>
+                </details>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card bg-light border-warning rounded shadow" id="Allen">
+              <img
+                src="https://static1.srcdn.com/wordpress/wp-content/uploads/2024/03/invincible-allen-the-alien-season-2-anissa-4.jpg"
+                class="card-img-top rounded-top" alt="Atom Eve">
+              <div class="card-body">
+                <h5 class="card-title">Allen</h5>
+                <details>
+                  <summary class="btn btn-warning btn-sm">Ver más</summary>
+                  <p class="card-text mt-2">Alan es un extraterrestre con una gran habilidad en combate, y se convierte
+                    en un aliado de Invincible tras varios enfrentamientos. Aunque inicialmente es un enemigo, su
+                    relación con Mark evoluciona y se convierte en uno de los aliados más leales.</p>
+                  <span class="badge hero">Héroe</span>
+                </details>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card bg-light border-warning rounded shadow" id="Oliver">
+              <img
+                src="https://spcdn.shortpixel.ai/spio/ret_img,q_orig,to_auto,s_webp:avif/www.cinemascomics.com/wp-content/uploads/2025/02/Oliver-Grayson-Invincible.jpg"
+                class="card-img-top rounded-top" alt="Rex Splode">
+              <div class="card-body">
+                <h5 class="card-title">Oliver</h5>
+                <details>
+                  <summary class="btn btn-warning btn-sm">Ver más</summary>
+                  <p class="card-text mt-2">Oliver es el hermano menor de Mark Grayson. A pesar de ser muy joven, posee
+                    habilidades similares a las de los Viltrumitas, como una fuerza impresionante y la capacidad de
+                    volar. En un momento de la serie, se une a la lucha contra las amenazas cósmicas y extraterrestres.
+                  </p>
+                  <span class="badge hero">Héroe</span>
+                  <span class="badge viltrumita">Viltrumita</span>
+                </details>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row mt-5">
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <div class="col">
+              <div class="card bg-light border-danger rounded shadow" id="Techjacket">
+                <img
+                  src="https://www.writeups.org/wp-content/uploads/Tech-Jacket-Kirkman-Invincible-Image-Comics-h1.jpg"
+                  class="card-img-top rounded-top" alt="Invincible">
+                <div class="card-body">
+                  <h5 class="card-title">Techjacket</h5>
+                  <details>
+                    <summary class="btn btn-warning btn-sm">Ver más</summary>
+                    <p class="card-text mt-2">Techjack es una figura crucial en la guerra contra los Viltrumitas, con su
+                      intelecto y habilidad para la ingeniería tecnológica que permite a la resistencia tener una
+                      oportunidad contra una raza tan poderosa. </p>
+                    <span class="badge hero">Héroe</span>
+                  </details>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+  </section>
+
+  <!-- Villanos -->
+  <section id="villanos" class="my-5">
+    <h1 class="text-center mb-4">Villanos Principales</h1>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+      <!-- Tarjetas de villanos -->
+      <div class="col">
+        <div class="card bg-light border-danger rounded shadow" id="Thragg">
+          <img
+            src="https://static1.thegamerimages.com/wordpress/wp-content/uploads/2025/03/thragg-s-ascension-to-power-in-invincible.jpg"
+            class="card-img-top rounded-top" alt="Thragg">
+          <div class="card-body">
+            <h5 class="card-title">Thragg</h5>
+            <details>
+              <summary class="btn btn-danger btn-sm">Ver más</summary>
+              <p class="card-text mt-2">Líder Viltrumita, un oponente formidable que combina fuerza y estrategia. Es uno
+                de los más grandes desafíos para Mark.</p>
+              <span class="badge villano">Villano</span>
+              <span class="badge viltrumita">Viltrumita</span>
+            </details>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card bg-light border-danger rounded shadow" id="Conquest">
+          <img
+            src="https://www.slashfilm.com/img/gallery/is-conquest-still-alive-after-invincible-season-3-his-comic-book-fate-explained/intro-1741914022.jpg"
+            class="card-img-top rounded-top" alt="Conquest">
+          <div class="card-body">
+            <h5 class="card-title">Conquest</h5>
+            <details>
+              <summary class="btn btn-danger btn-sm">Ver más</summary>
+              <p class="card-text mt-2">Un brutal Viltrumita que disfruta del caos. Su batalla con Invincible dejó
+                huellas físicas y emocionales profundas.</p>
+              <span class="badge villano">Villano</span>
+              <span class="badge viltrumita">Viltrumita</span>
+            </details>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card bg-light border-danger rounded shadow" id="Angstrom Levy">
+          <img
+            src="https://www.dexerto.com/cdn-image/wp-content/uploads/2025/03/05/angstrom-levy-invincible-season-3.jpg?width=1200&quality=60&format=auto"
+            class="card-img-top rounded-top" alt="Angstrom Levy">
+          <div class="card-body">
+            <h5 class="card-title">Angstrom Levy</h5>
+            <details>
+              <summary class="btn btn-danger btn-sm">Ver más</summary>
+              <p class="card-text mt-2">Un villano con la capacidad de viajar entre dimensiones, lo que lo hace
+                extremadamente peligroso.</p>
+              <span class="badge villano">Villano</span>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <div class="col">
+          <div class="card bg-light border-danger rounded shadow" id="The Mauler Twins">
+            <img
+              src="https://static0.srcdn.com/wordpress/wp-content/uploads/2025/02/the-mauler-twins-plotting-while-wearing-lab-coats-in-invincible.jpg"
+              class="card-img-top rounded-top" alt="Invincible">
+            <div class="card-body">
+              <h5 class="card-title">The Mauler Twins</h5>
+              <details>
+                <summary class="btn btn-warning btn-sm">Ver más</summary>
+                <p class="card-text mt-2"> Los Mauler Twins son un par de genios científicos que, al usar la clonación,
+                  crean versiones de sí mismos para llevar a cabo sus planes. A menudo se enfrentan a Invincible y otros
+                  héroes, utilizando su intelecto y su ejército de clones para intentar dominar el mundo.</p>
+                <span class="badge villano">Villano</span>
+              </details>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card bg-light border-danger rounded shadow" id="Robot">
+            <img
+              src="https://preview.redd.it/4vwibgz71dqc1.jpeg?width=640&crop=smart&auto=webp&s=f5eaba2d58ceb8f9e4b7285a7d7624f3a65680f0"
+              class="card-img-top rounded-top" alt="Atom Eve">
+            <div class="card-body">
+              <h5 class="card-title">Robot</h5>
+              <details>
+                <summary class="btn btn-warning btn-sm">Ver más</summary>
+                <p class="card-text mt-2">Robot, inicialmente parte de los Guardians of the Globe, se revela como un
+                  villano cuando sus planes para obtener el control sobre la humanidad salen a la luz. Robot tiene una
+                  visión distorsionada de lo que es lo mejor para la humanidad y, al principio, actúa en el interés de
+                  protegerla, pero sus métodos y deseos de poder lo llevan a enfrentarse a Invincible y otros héroes.
+                </p>
+                <span class="badge hero">Heroe</span>
+                <span class="badge villano">Villano</span>
+              </details>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card bg-light border-danger rounded shadow" id="Dinosaurus">
+            <img src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2025/03/dinosaurus-from-invincible.jpg"
+              class="card-img-top rounded-top" alt="Rex Splode">
+            <div class="card-body">
+              <h5 class="card-title">Dinosaurus</h5>
+              <details>
+                <summary class="btn btn-warning btn-sm">Ver más</summary>
+                <p class="card-text mt-2"> Dinosaurus es un villano con la apariencia de un dinosaurio, pero con una
+                  mente extremadamente avanzada. Su objetivo es crear un mundo mejor a través de la destrucción, y su
+                  filosofía es que solo mediante el caos se puede lograr una verdadera paz. Aunque en un principio
+                  parece ser solo un villano, sus motivaciones son más complejas y filosóficas.</p>
+                <span class="badge villano">Villano</span>
+              </details>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-5">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+          <div class="col">
+            <div class="card bg-light border-danger rounded shadow" id="The Lizard League">
+              <img src="https://comicvine.gamespot.com/a/uploads/scale_medium/1/15776/9173491-lizardleague.jpg"
+                class="card-img-top rounded-top" alt="Invincible">
+              <div class="card-body">
+                <h5 class="card-title">The Lizard League</h5>
+                <details>
+                  <summary class="btn btn-warning btn-sm">Ver más</summary>
+                  <p class="card-text mt-2"> La Lizard League es un grupo de villanos que consiste en varios personajes
+                    con habilidades relacionadas con los reptiles, como el Lizard League Leader y su equipo de
+                    guerreros, que buscan causar caos y controlar la Tierra con sus habilidades de lucha y destrucción.
+                  </p>
+                  <span class="badge villano">Villano</span>
+                </details>
+              </div>
+            </div>
+          </div>
+  </section>
+
+  <!-- Viltrumitas -->
+  <section id="viltrumitas" class="my-5">
+    <h1 class="text-center mb-4">Viltrumitas Notables</h1>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+      <!-- Tarjetas de Viltrumitas -->
+      <div class="col">
+        <div class="card bg-light border-secondary rounded shadow" id="Omni-Man">
+          <img src="https://www.sinembargo.mx/wp-content/uploads/2021/04/omni-man.jpeg" class="card-img-top rounded-top"
+            alt="Omni-Man">
+          <div class="card-body">
+            <h5 class="card-title">Omni-Man</h5>
+            <details>
+              <summary class="btn btn-secondary btn-sm">Ver más</summary>
+              <p class="card-text mt-2">Nolan Grayson, padre de Mark, es un Viltrumita con una compleja relación con la
+                Tierra y su familia.</p>
+              <span class="badge hero">Heroe</span>
+              <span class="badge viltrumita">Viltrumita</span>
+            </details>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card bg-light border-secondary rounded shadow" id="Ursaal">
+          <img src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2023/10/ursaal-invincible.jpg"
+            class="card-img-top rounded-top" alt="Ursaal">
+          <div class="card-body">
+            <h5 class="card-title">Ursaal</h5>
+            <details>
+              <summary class="btn btn-secondary btn-sm">Ver más</summary>
+              <p class="card-text mt-2">Una feroz Viltrumita con habilidades letales y una lealtad inquebrantable al
+                Imperio Viltrumita.</p>
+              <span class="badge viltrumita">Viltrumita</span>
+            </details>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card bg-light border-secondary rounded shadow" id="Anissa">
+          <img src="https://hips.hearstapps.com/hmg-prod/images/anissa-66083c6d64a25.png"
+            class="card-img-top rounded-top" alt="Anissa">
+          <div class="card-body">
+            <h5 class="card-title">Anissa</h5>
+            <details>
+              <summary class="btn btn-secondary btn-sm">Ver más</summary>
+              <p class="card-text mt-2">Una Viltrumita comprometida con la expansión del imperio. Representa un desafío
+                tanto físico como moral para Invincible.</p>
+              <span class="badge viltrumita">Viltrumita</span>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col">
+        <div class="card bg-light border-secondary rounded shadow" id="Lucan">
+          <img src="https://comicbookclublive.com/wp-content/uploads/2023/11/lucan-invincible-jpg.webp"
+            class="card-img-top rounded-top" alt="Omni-Man">
+          <div class="card-body">
+            <h5 class="card-title">Lucan</h5>
+            <details>
+              <summary class="btn btn-secondary btn-sm">Ver más</summary>
+              <p class="card-text mt-2">Lucan aparece como uno de los soldados de alto rango de los Viltrumitas.
+                Es uno de los tres enviados a la Tierra (junto con Conquest y Thaedus) cuando Omni-Man (Nolan Grayson)
+                traiciona su misión original de dominar el planeta.</p>
+              <span class="badge viltrumita">Viltrumita</span>
+            </details>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card bg-light border-secondary rounded shadow" id="Kregg">
+          <img src="https://pbs.twimg.com/media/E2Ot2MdWEAQ9K-p.jpg" class="card-img-top rounded-top" alt="Ursaal">
+          <div class="card-body">
+            <h5 class="card-title">Kregg</h5>
+            <details>
+              <summary class="btn btn-secondary btn-sm">Ver más</summary>
+              <p class="card-text mt-2">Es uno de los líderes más importantes y brutales del ejército viltrumita. Kregg
+                actúa como comandante militar y muchas veces como líder en campo cuando los viltrumitas están ejecutando
+                sus planes de dominación galáctica.</p>
+              <span class="badge viltrumita">Viltrumita</span>
+            </details>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card bg-light border-secondary rounded shadow" id="Argall">
+          <img
+            src="https://i.ytimg.com/vi/oUwnXvcF4Hw/maxresdefault.jpg?sqp=-oaymwEoCIAKENAF8quKqQMcGADwAQH4AbYIgAKAD4oCDAgAEAEYfyAjKB4wDw==&rs=AOn4CLBUu-vdIYHnFzoER-MkZtTFqkZEdg"
+            class="card-img-top rounded-top" alt="Argall">
+          <div class="card-body">
+            <h5 class="card-title">Argall</h5>
+            <details>
+              <summary class="btn btn-secondary btn-sm">Ver más</summary>
+              <p class="card-text mt-2">Argall fue uno de los líderes supremos del Imperio Viltrumita. Vivió hace miles
+                de años antes de los eventos principales de la serie. Es una figura casi legendaria para los
+                viltrumitas, como un "gran conquistador" o "padre fundador" de su civilización expansionista.</p>
+              <span class="badge viltrumita">Viltrumita</span>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <div class="col">
+          <div class="card bg-light border-danger rounded shadow" id="Thaedeus">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc8kNvaE5rfc0E0FaSFHEtdL9E8Rn555wiCA&s"
+              class="card-img-top rounded-top" alt="Invincible">
+            <div class="card-body">
+              <h5 class="card-title">Thaedeus </h5>
+              <details>
+                <summary class="btn btn-warning btn-sm">Ver más</summary>
+                <p class="card-text mt-2">Fue un miembro clave de la resistencia contra el Imperio Viltrumita y uno de
+                  los Viltrumitas que se oponía a los métodos de su propia raza.</p>
+                <span class="badge viltrumita">Viltrumita</span>
+              </details>
+            </div>
+          </div>
+        </div>
+
+  </section>
+
+  <!-- Arcos Argumentales -->
+  <section id="arcos" class="my-5">
+    <h1 class="text-center mb-4">Arcos Argumentales</h1>
+
+    <div class="container d-flex justify-content-center">
+      <div class="accordion" id="accordionArcos" style="max-width: 600px; width: 100%;">
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingArcos">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseArcos" aria-expanded="false" aria-controls="collapseArcos">
+              Leer Arcos Argumentales
+            </button>
+          </h2>
+
+          <div id="collapseArcos" class="accordion-collapse collapse" aria-labelledby="headingArcos"
+            data-bs-parent="#accordionArcos">
+            <div class="accordion-body">
+
+              <div class="list-group">
+                <a href="https://readcomiconline.li/Comic/Invincible/TPB-1-Family-matters?id=34153"
+                  class="list-group-item list-group-item-action">Family Matters (números 1-4)</a>
+                <a href="https://readcomiconline.li/Comic/Invincible/TPB-2-Eight-is-Enough?id=34246"
+                  class="list-group-item list-group-item-action">Eight is Enough (números 5-8)</a>
+                <a href="https://readcomiconline.li/Comic/Invincible/TPB-3-Perfect-Strangers?id=34258"
+                  class="list-group-item list-group-item-action">Perfect Strangers (números 9-13)</a>
+                <a href="https://readcomiconline.li/Comic/Invincible/TPB-4-Head-of-The-Class?id=34262"
+                  class="list-group-item list-group-item-action">Head of the Class (números 14-19)</a>
+                <a href="https://readcomiconline.li/Comic/Invincible/TPB-5-The-Facts-of-Life?id=34265"
+                  class="list-group-item list-group-item-action">The Facts of Life (números 20-24)</a>
+                <a href="https://readcomiconline.li/Comic/Invincible/TPB-6-A-Different-World?id=34270"
+                  class="list-group-item list-group-item-action">A Different World (números 25-30)</a>
+                <a href="https://readcomiconline.li/Comic/Invincible/TPB-7-Threes-Company?id=34282"
+                  class="list-group-item list-group-item-action">Three's Company (números 31-35)</a>
+                <a href="https://readcomiconline.li/Comic/Invincible/TPB-8-My-Favorite-Martian?id=34287"
+                  class="list-group-item list-group-item-action">My Favorite Martian (números 36-41)</a>
+                <a href="https://readcomiconline.li/Comic/Invincible/TPB-13-Growing-Pains"
+                  class="list-group-item list-group-item-action">Growing Pains (números 42-47)</a>
+                <a href="https://readcomiconline.li/Comic/Invincible" class="list-group-item list-group-item-action">The
+                  Invincible War (Especial + Número 60)</a>
+                <a href="https://readcomiconline.li/Comic/Invincible"
+                  class="list-group-item list-group-item-action">Conquest (números 61-65)</a>
+                <a href="https://readcomiconline.li/Comic/Invincible"
+                  class="list-group-item list-group-item-action">Cautiously Optimistic (números 66-70)</a>
+                <a href="https://readcomiconline.li/Comic/Invincible"
+                  class="list-group-item list-group-item-action">Viltrumite War (números 71-78)</a>
+                <a href="https://readcomiconline.li/Comic/Invincible" class="list-group-item list-group-item-action">Get
+                  Smart (números 79-84)</a>
+                <a href="https://readcomiconline.li/Comic/Invincible" class="list-group-item list-group-item-action">The
+                  Death of Everyone (números 97-100)</a>
+                <a href="https://readcomiconline.li/Comic/Invincible" class="list-group-item list-group-item-action">The
+                  End of All Things (números 133-144)</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Formulario de contacto -->
+  <section id="contacto" class="my-5">
+    <div class="container">
+      <h1 class="text-center mb-4">Contacto</h1>
+      <form class="bg-light p-4 rounded shadow">
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nombre" placeholder="Tu nombre">
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Correo Electrónico</label>
+          <input type="email" class="form-control" id="email" placeholder="tuemail@example.com">
+        </div>
+        <div class="mb-3">
+          <label for="mensaje" class="form-label">Mensaje</label>
+          <textarea class="form-control" id="mensaje" rows="3" placeholder="Escribe tu mensaje aquí..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-warning w-100">Enviar</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-3 bg-dark text-light">
+    © 2025 Invincible Universe - Creado con HTML y CSS.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    document.querySelector('form.d-flex').addEventListener('submit', function (event) {
+      event.preventDefault(); // Evitar el envío del formulario
+
+      const query = event.target.querySelector('input').value.toLowerCase(); // Obtener y normalizar el valor del input
+      const sections = document.querySelectorAll('[id]'); // Buscar todas las secciones con ID
+
+      let found = false; // Variable para verificar si se encontró una coincidencia
+
+      sections.forEach(section => {
+        const sectionID = section.id.toLowerCase(); // Normalizar el ID de cada sección
+        if (sectionID.includes(query)) { // Comparar si el query coincide con el ID
+          section.scrollIntoView({ behavior: 'smooth' }); // Desplazar suavemente a la sección
+          found = true;
+        }
+      });
+
+      if (!found) {
+        alert('No se encontró ningún resultado para tu búsqueda.'); // Mostrar alerta si no hay coincidencias
+      }
+    });
+
+    window.onscroll = function () {
+      const scrollTopButton = document.getElementById("scrollTopButton");
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        scrollTopButton.style.display = "flex";
+      } else {
+        scrollTopButton.style.display = "none";
+      }
+    };
+
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+
+    // Función para manejar la búsqueda
+    function buscarPersonaje() {
+      const query = document.querySelector("input[type='search']").value.toLowerCase();
+      const cards = document.querySelectorAll(".card");
+
+      // Primero elimina cualquier resalte previo
+      cards.forEach(card => card.classList.remove("highlight-card"));
+
+      // Buscamos el personaje por nombre (asegurándonos de que esté en minúsculas)
+      cards.forEach(card => {
+        const title = card.querySelector(".card-title").innerText.toLowerCase();
+        if (title.includes(query)) {
+          // Resalta la tarjeta encontrada
+          card.classList.add("highlight-card");
+
+          // Desplazamos la tarjeta encontrada a la vista
+          card.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      });
+    }
+
+    // Detecta cuando el usuario presiona enter o hace clic en el botón de búsqueda
+    document.querySelector("form").addEventListener("submit", function (event) {
+      event.preventDefault();
+      buscarPersonaje();
+    });
+
+  </script>
+
+  <script>
+    // Lista de personajes, villanos y arcos
+    const heroesVillanosArcos = [
+      "Invincible", "Atom Eve", "Rex Splode", "Dupli-Kate", "Monster Girl", "Inmortal", "Samson", "Allen", "Oliver", "Techjacket", "Thragg", "Conquest", "Angstrom Levy", "The Mauler Twins",
+      "Robot", "Dinosaurus", "The Lizard League", "Omni-Man", "Ursaal", "Anissa", "Lucan", "Kregg", "Argall", "Thaedeus"
+    ];
+
+    // Evento de entrada en la barra de búsqueda
+    document.getElementById("searchInput").addEventListener("input", function () {
+      const input = this.value.toLowerCase();
+      const autocompleteList = document.getElementById("autocomplete-list");
+
+      // Limpiar la lista de sugerencias anteriores
+      autocompleteList.innerHTML = "";
+
+      if (!input) {
+        return false; // Si no hay texto, no mostrar sugerencias
+      }
+
+      // Filtrar las opciones que comienzan con la letra escrita por el usuario
+      const suggestions = heroesVillanosArcos.filter(item => item.toLowerCase().startsWith(input));
+
+      // Mostrar las sugerencias filtradas
+      suggestions.forEach(item => {
+        const div = document.createElement("div");
+        div.textContent = item;
+        div.addEventListener("click", function () {
+          // Al hacer clic en una sugerencia, llenar el campo de búsqueda con el valor seleccionado
+          document.getElementById("searchInput").value = item;
+          autocompleteList.innerHTML = ""; // Limpiar las sugerencias
+        });
+        autocompleteList.appendChild(div);
+      });
+    });
+  </script>
+
+
+
+  <button id="scrollTopButton" class="scroll-to-top" onclick="scrollToTop()">↑</button>
+
+
+</body>
+
+
+</html>
+</body>
+
+</html>
