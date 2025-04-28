@@ -263,6 +263,7 @@ footer {
   font-weight: bold;
 }
 
+
 /* Estilo para los Badges */
 .badge {
   display: inline-block;
@@ -273,44 +274,56 @@ footer {
   margin-bottom: 5px;
   text-align: center;
   color: #fff;
-  transition: all 0.3s ease;
+  animation: badgeAnimation 3s infinite alternate; 
   cursor: pointer;
 }
 
-/* Color de fondo para los diferentes tipos de badge */
+/* Colores para los badges */
 .badge.hero {
   background-color: #007bff; /* Azul para héroes */
 }
 
-.badge.villain {
+.badge.villano {
   background-color: #dc3545; /* Rojo para villanos */
 }
 
-.badge.arc {
-  background-color: #28a745; /* Verde para arcos */
+.badge.viltrumita {
+  background-color: #28a745; /* Verde para viltrumitas*/
 }
 
-/* Efecto al pasar el mouse */
-.badge:hover {
-  transform: scale(1.1); /* Hace que el badge se agrande un poco */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Agrega una sombra sutil */
-  background-color: #ffc107; /* Cambia el color de fondo al pasar el mouse */
-}
-
-/* Si quieres animaciones de entrada para los badges */
-.badge {
-  opacity: 0;
-  animation: fadeIn 1s forwards; /* Aparece con una animación de desvanecimiento */
-}
-
-/* Animación de desvanecimiento */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
+@keyframes badgeAnimation {
+  0% {
+    transform: scale(1) translateY(0);
+    opacity: 0.8;
   }
-  to {
+  50% {
+    transform: scale(1.2) translateY(-10px); 
     opacity: 1;
   }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 0.8;
+  }
 }
 
+/* Estilo general para la imagen voladora */
+.fly-image {
+  position: absolute;
+  top: 10%; 
+  left: -150px; 
+  width: 80px; 
+  height: auto; 
+  transform: scale(1.5); 
+  animation: flying 10s linear infinite; 
+  z-index: 1000; 
+}
 
+/* Animación de vuelo */
+@keyframes flying {
+  0% {
+      left: -150px; 
+  }
+  100% {
+      left: 100%;
+  }
+}
